@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     # build docker image and push to docker hub
     # only if the app build and test successfully
-    needs: [build_test]
     steps:
       - name: checkout repo
         uses: actions/checkout@v2
@@ -38,4 +37,3 @@ jobs:
             echo "runing the docker image"
             echo "Testing the nodejs  app endpoints"
             echo ${{ steps.docker_build.outputs.digest }}
-has context menu
