@@ -28,11 +28,11 @@ jobs:
           context: ./
           file: ./nginx.DockerFile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USER }}/react-app:latest
+          tags: ${{ vars.DOCKER_HUB_USER }}/react-app:latest
       - name: Run the image in a container
         uses: addnab/docker-run-action@v3
         with:
-          image: ${{ secrets.DOCKER_HUB_USER }}/react-app:latest
+          image: ${{ vars.DOCKER_HUB_USER }}/react-app:latest
           run: |
             echo "runing the docker image"
             echo "Testing the nodejs  app endpoints"
